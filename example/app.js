@@ -18,11 +18,19 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
+/*
+,
+'phone_number',
+'demographics',
+'birthday',
+'education',
+'event'
+*/
+
 passport.use(new MyMLHStrategy({
   clientID: config.MYMLH_CLIENT_ID,
   clientSecret: config.MYMLH_SECRET,
-  callbackURL: "http://localhost:8080/callback/mymlh",
-  scope: []
+  callbackURL: "http://localhost:8080/callback/mymlh"
 }, function(accessToken, refreshToken, profile, done) {
   console.log(accessToken);
   process.nextTick(function() {

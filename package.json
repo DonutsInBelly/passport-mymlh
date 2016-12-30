@@ -32,7 +32,6 @@
     "express-session": "^1.14.2",
     "mocha": "^3.2.0",
     "morgan": "^1.7.0",
-    "proxyquire": "^1.7.10",
-    "vows": "^0.8.1"
+    "proxyquire": "^1.7.10"
   }
 }

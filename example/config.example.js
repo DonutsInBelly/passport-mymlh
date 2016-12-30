@@ -1,0 +1,4 @@
+module.exports = {
+  'MYMLH_CLIENT_ID': '<APPLICATION ID HERE>',
+  'MYMLH_SECRET': '<SECRET HERE>'
+}
