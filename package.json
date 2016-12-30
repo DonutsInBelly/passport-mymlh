@@ -1,0 +1,35 @@
+{
+  "name": "passport-mymlh",
+  "version": "1.0.0",
+  "description": "MyMLH authentication Strategy for Passport.",
+  "main": "./lib",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "vows test/*-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dominusbelli/passport-mymlh.git"
+  },
+  "author": "Carlin Au",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dominusbelli/passport-mymlh/issues"
+  },
+  "homepage": "https://github.com/dominusbelli/passport-mymlh#readme",
+  "dependencies": {
+    "passport": "^0.3.2",
+    "passport-oauth2": "^1.4.0"
+  },
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "mocha": "^3.2.0",
+    "morgan": "^1.7.0",
+    "vows": "^0.8.1"
+  }
+}
