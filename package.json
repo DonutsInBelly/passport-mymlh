@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "vows test/*-test.js"
+    "test": "mocha test/strategy-test.js"
   },
   "repository": {
     "type": "git",
@@ -25,11 +25,14 @@
   },
   "devDependencies": {
     "body-parser": "^1.15.2",
+    "chai": "^3.5.0",
     "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.5",
     "express": "^4.14.0",
     "express-session": "^1.14.2",
     "mocha": "^3.2.0",
     "morgan": "^1.7.0",
+    "proxyquire": "^1.7.10",
     "vows": "^0.8.1"
   }
 }
