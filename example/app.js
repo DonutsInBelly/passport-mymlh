@@ -8,6 +8,7 @@ var bodyParser    = require('body-parser');
 var morgan        = require('morgan');
 
 // Config to hold Client ID and Secret
+// example found in config.example.js
 const config      = require('./config.js');
 
 passport.serializeUser(function(user, done) {
@@ -18,15 +19,8 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
-/*
-,
-'phone_number',
-'demographics',
-'birthday',
-'education',
-'event'
-*/
-
+// Use MyMLHStrategy within Passport
+// Callback function gives us the accessToken, refreshToken, and profile
 passport.use(new MyMLHStrategy({
   clientID: config.MYMLH_CLIENT_ID,
   clientSecret: config.MYMLH_SECRET,
@@ -38,6 +32,7 @@ passport.use(new MyMLHStrategy({
   });
 }));
 
+// Set up the Express server
 var app = express();
 
 app.set('views', __dirname + '/views');
@@ -47,6 +42,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({ secret: 'hackru', resave: false, saveUninitialized: false }));
+
+// Set up passport
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
@@ -64,10 +61,12 @@ app.get('/login', (req, res)=>{
   res.render('login', {user: req.user});
 });
 
+// This is where authentication starts
 app.get('/register', passport.authenticate('mymlh'), (req, res)=>{
 
 });
 
+// MyMLH redirects back here with authorization code
 app.get('/callback/mymlh', passport.authenticate('mymlh', {
   failureRedirect: '/login',
   successRedirect: '/account'
