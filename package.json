@@ -1,6 +1,6 @@
 {
   "name": "passport-mymlh",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "MyMLH authentication Strategy for Passport.",
   "main": "./lib",
   "directories": {
