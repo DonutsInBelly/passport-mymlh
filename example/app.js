@@ -24,7 +24,15 @@ passport.deserializeUser(function(obj, done) {
 passport.use(new MyMLHStrategy({
   clientID: config.MYMLH_CLIENT_ID,
   clientSecret: config.MYMLH_SECRET,
-  callbackURL: "http://localhost:8080/callback/mymlh"
+  callbackURL: "http://localhost:8080/callback/mymlh",
+  scope: [
+    'email',
+    'phone_number',
+    'demographics',
+    'birthday',
+    'education',
+    'event'
+  ]
 }, function(accessToken, refreshToken, profile, done) {
   console.log(accessToken);
   process.nextTick(function() {
