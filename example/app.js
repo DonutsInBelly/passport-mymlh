@@ -36,6 +36,8 @@ passport.use(new MyMLHStrategy({
 }, function(accessToken, refreshToken, profile, done) {
   console.log(accessToken);
   process.nextTick(function() {
+    console.log('AYYYYYYYYYY LMAOOO');
+    console.log(profile);
     return done(null, profile);
   });
 }));
